@@ -32,7 +32,14 @@
 
 //CODE HERE
 
-
+const pizza = {
+    name: 'Quattro Formaggi',
+    price: 19.99,
+    category: 'entree',
+    popularity: 4.7,
+    rating: 4.7,
+    tags: ['vegetarian', 'cheese']
+}
 
 //////////////////PROBLEM 2////////////////////
 /*
@@ -43,7 +50,7 @@
 */
 
 //CODE HERE
-
+console.log(`Pizza popularity is ${pizza.popularity}`);
 
 /*
     Second, log the second tag in your pizza's
@@ -53,7 +60,7 @@
 */
 
 //CODE HERE
-
+console.log('Second pizza tag is ' + pizza.tags[1]);
 
 /*
     Third, destructure the price off of the
@@ -63,6 +70,8 @@
 */
 
 //CODE HERE
+const { price } = pizza;
+console.log(`Price is ${price}`);
 
 
 /*
@@ -73,6 +82,8 @@
 */
 
 //CODE HERE
+const { category } = pizza;
+console.log(category);
 
 
 //////////////////PROBLEM 3////////////////////
@@ -88,7 +99,40 @@
 */
 
 //CODE HERE
-
+const foodArr = [
+    {
+        name: 'Quattro Formaggi',
+        price: 19.99,
+        category: 'entree',
+        popularity: 4.7,
+        rating: 4.7,
+        tags: ['vegetarian', 'cheese', 'pizza']
+    },
+    {
+        name: 'Pasta Carbonara',
+        price: 16.99,
+        category: 'entree',
+        popularity: 4.2,
+        rating: 4.4,
+        tags: ['pasta', 'cheese']
+    },
+    {
+        name: 'Margherita',
+        price: 14.99,
+        category: 'entree',
+        popularity: 4.0,
+        rating: 4.1,
+        tags: ['vegetarian', 'cheese', 'pizza']
+    },
+    {
+        name: 'Caprese',
+        price: 10.99,
+        category: 'appetizer',
+        popularity: 5.0,
+        rating: 4.7,
+        tags: ['vegetarian', 'salad']
+    }
+]
 
 
 //////////////////PROBLEM 4////////////////////
@@ -109,8 +153,7 @@
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
-
+const filteredFood = foodArr.filter((food) => food.tags.includes('pizza'));
 
 
 //////////////////PROBLEM 5////////////////////
@@ -146,7 +189,9 @@
 
     Return the filtered array from the entire function
 */
-
+const filterByProperty = (property, number) => {
+    return foodArr.filter(food => food[property] > number);
+}
 //CODE HERE
 
 
@@ -156,5 +201,6 @@
 
     You'll have to console.log to see the filtered array
 */
-
-//CODE HERE
+console.log(filterByProperty('rating', 4.5));
+console.log(filterByProperty('price', 15));
+console.log(filterByProperty('popularity', 4.7));
