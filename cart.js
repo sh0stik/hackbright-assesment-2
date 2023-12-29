@@ -20,22 +20,23 @@
 
 const cart = [
     {
-        name: 'pizza', 
+        name: 'pizza',
         price: 9.99
-    }, 
+    },
     {
-        name: 'pasta', 
+        name: 'pasta',
         price: 8.99
-    }, 
+    },
     {
-        name: 'salad', 
+        name: 'salad',
         price: 7.99
     }
 ]
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce((total, food) => total + food.price, 0);
+console.log(summedPrice);
 
 
 //////////////////PROBLEM 2////////////////////
@@ -54,17 +55,22 @@ const cart = [
 */
 
 //CODE HERE
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+    cartTotal += cartTotal * tax - couponValue;
+    return cartTotal;
+}
+console.log(calcFinalPrice(39.99, 10, 0.09));
 
 
 
 //////////////////PROBLEM 3////////////////////
-/*  
-    In this problem, you'll create a model for 
+/*
+    In this problem, you'll create a model for
     a customer object as well as an example
-    object. 
+    object.
 
     Plan out a customer object for the cart page.
-    Think about the information that a 
+    Think about the information that a
     restaurant would need about its customers.
 
     In the TEXT ANSWER area below, describe the
@@ -72,14 +78,17 @@ const cart = [
     and why you chose those properties.
 
     Explain what data types each property should be
-    and why you chose those data types. 
+    and why you chose those data types.
 
-    Your object should have at least 4 properties. 
+    Your object should have at least 4 properties.
 */
 
 /*
-    TEXT ANSWER HERE
-
+    The Customer object will have an ID (number), 
+    full name (string), email (string), and phone number (string). 
+    The ID should be numeric for easy incrementing. The name should be a string. 
+    The email should be a string and undergo validation with a regexp. 
+    Similarly, the phone number should be a string and undergo validation using a regexp.
 */
 
 /*
@@ -88,3 +97,11 @@ const cart = [
 */
 
 //CODE HERE
+const customer = {
+    id : 1,
+    fullName : 'John Doe',
+    email : 'j.doe@email.com',
+    phoneNumber : '(123) 456-7890'
+}
+
+console.log(customer);
